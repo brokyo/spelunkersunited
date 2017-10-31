@@ -21,8 +21,9 @@
 			</div>
 		</div>
 		<div id="introCard" v-if="!started">
-			<p>[Controls in the upper right - other information in widget and @ underconstruction club. If a midi file downloads when you get to a page please click the file downloaded button in upper right.</p>
-			<!-- <p>Back and forward buttons work as you'd expect]</p> -->
+			<p>Controls in the upper right - other information in widget and @ underconstruction club.</p>
+      <p>Back and forward buttons work as if you're on the site</p>
+      <router-link to="memorial">Visit The Memorial</router-link>
 		</div>
   		<iframe v-if="started" :src="iframeUrl" sandbox></iframe>
   		<u3c :config="this.u3c"></u3c>
@@ -68,20 +69,12 @@ export default {
 	          next: "Just needed to get this out of my system so did those over a weekend. If people find it interesting enough will add to it.",
 	          // db: 'jsradioorchestra'
 	        }
-		} 
+		}
 	},
     firebase: {
     	memorialized: db.ref('memorialized'),
     	midis: db.ref('midis'),
-    	geoCities: {
-    		source: db.ref('geoCitiesBase'),
-    		cancelCallback: function () {
-    			console.log('nah')
-    		},
-    		readyCallback: function () {
-
-    		}
-    	}
+    	geoCities: db.ref('geoCitiesPages')
     },
     methods: {
     	random () {
@@ -135,7 +128,8 @@ export default {
     			from: this.spelunker,
     			topicId: this.selectedTopicId,
     			neighborhood: this.activePage.neighborhood,
-    			address: this.activePage.address
+    			address: this.activePage.address,
+          date: Date.now()
     		}
 
     		this.$firebaseRefs.memorialized.push(saveObject)
@@ -174,15 +168,12 @@ export default {
 }
 
 #introCard {
-	position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 100px;
+  padding-top: 200px;
 }
 
 select {
@@ -214,6 +205,7 @@ a {
 	text-align: center;
 	display: block;
 	text-decoration: underline;
+  cursor: pointer;
 }
 
 </style>
