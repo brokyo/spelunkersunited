@@ -36,17 +36,6 @@ import '../plugins/vue-easy-toast.js'
 import '../plugins/lodash.js'
 import '../plugins/u3c.js'
 
-// {
-//   "neighborhood": "Athens",
-//   "about": "Teaching, education, philosophy, reading, writing",
-//   "address": "8020"
-// }
-
-// "neighborhood": "Area51",
-// "about": "Science fiction & fantasy",
-// "address": "8616"
-
-
 export default {
 	name: 'home',
 	data () {
@@ -64,10 +53,9 @@ export default {
 			saveTopics: [{id: 0, text: 'dreams lived and interrupted'}, {id: 1, text: 'aestheticcccccccccccccc'}, {id: 2, text: 'different'}, {id: 3, text: 'obscure topic'}, {id: 4, text: 'tiny world'}, {id: 5, text: 'time capsule'}, {id: 6, text: 'fading out of existence'}, {id: 7, text: 'something else'}],
 			selectedTopicId: '',
 	        u3c: {
-	          about: "I want to build a memorial to all the wonderful things that happened on geocities and the impossible way it flash froze. Geocities was taken offline in 2009 the decayed version you see when navigating is literally how it was left.",
+	          about: "I want to build a memorial to all the wonderful things that happened on geocities and the amazing way it flash froze. Geocities was taken offline in 2009 the decayed version you see when navigating is literally what was left.",
 	          instructions: 'Spend a little bit of time on each page - even the ones that seem broken or are just a list of files. Save it if you want.',
-	          next: "Just needed to get this out of my system so did those over a weekend. If people find it interesting enough will add to it.",
-	          // db: 'jsradioorchestra'
+	          next: "Just needed to get this out of my system so did this over a weekend. If people find it interesting enough will add to it.",
 	        }
 		}
 	},

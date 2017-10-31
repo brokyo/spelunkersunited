@@ -14,17 +14,17 @@
           <p>{{config.instructions}}</p>
         </div>
         <div v-if="config.next">
-          <label>Hoq Can I help?</label>
+          <label>How Can I help?</label>
           <p>{{config.next}}</p>
         </div>
       </div>
       <div v-if="state === 'guestbook'">
         <button @click="state = 'text'">About</button>
         <textarea v-model="newComment"></textarea>
-        <button @click="post">Post</button>
+        <button @click="post" :disabled="!newComment">Post</button>
         <div v-if="comments">
           <label>Suggestion Box/Guestbook</label>
-          <p v-for="comment in comments">{{comment}}</p>
+          <p v-for="comment in comments">{{comment.text}}</p>
         </div>
       </div>
     </div>
@@ -32,7 +32,8 @@
 </template>
 
 <script>
-// var axios = require('axios')
+import { db } from './firebase.js'
+
 export default {
   name: 'ucc',
   props: ['config'],
@@ -40,33 +41,21 @@ export default {
     return {
       state: 'text',
       newComment: '',
-      comments: [],
       explainer: false,
       min: true
     }
   },
-  methods: {
-    // post: function () {
-    //   console.log('post?')
-    //   axios.post('https://' + this.config.db + '.firebase.io/guestbook.json', {text: this.newComment})
-    //     .then(res => {
-    //       console.log('comment saved', res)
-    //       this.comments.push(this.newComment)
-    //       this.newComment = ''
-    //     })
-    //     .catch(e => {
-    //       console.log('something broke', e)
-    //     })
-    // }
+  firebase: {
+    guestbook: db.ref('guestbook')
   },
-  mounted () {
-    // axios.create({baseURL: 'https://' + this.config.db + '.firebaseio.com/'})
-
-    // axios.get('guestbook.json')
-    //   .then(res => {
-    //     console.log(res.data)
-    //     this.comments = res.data
-    //   })
+  computed: {
+    comments () { return  _.reverse(_.sortBy(this.guestbook, ['date']))}
+  },
+  methods: {
+    post: function () {
+        this.$firebaseRefs.guestbook.push({text: this.newComment, date: Date.now()})
+        this.newComment = ''
+      }
   }
 }
 </script>
@@ -77,6 +66,7 @@ export default {
     right: 0;
     bottom: 0;
     width: 400px;
+    background-color: white;
 
     label {
       margin-top: 20px;
@@ -90,7 +80,7 @@ export default {
     .textBox {
       padding: 0px 8px;
       max-height: 200px;
-      overflow: scroll;      
+      overflow: scroll;
       border-left: 2px dashed black;
       border-right: 2px dashed black;
     }
