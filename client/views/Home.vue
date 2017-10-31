@@ -161,7 +161,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 #controlPanel {
 	z-index: 1;
 	position: absolute;
