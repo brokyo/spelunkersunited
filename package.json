@@ -4,7 +4,6 @@
   "description": "My Superb Vue Project",
   "main": "client/index.js",
   "scripts": {
-    "test": "",
     "build": "webpack --config build/webpack.prod.js",
     "start": "node build/server.js",
     "dev": "node build/server.js",
