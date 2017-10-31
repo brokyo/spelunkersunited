@@ -24,6 +24,7 @@
 			<p>Controls in the upper right - other information in widget and @ underconstruction club.</p>
       <p>Back and forward buttons work as if you're on the site</p>
       <router-link to="memorial">Visit The Memorial</router-link>
+      <pre>All pages hosted on <a href="http://www.oocities.org">oocities</a></pre>
 		</div>
   		<iframe v-if="started" :src="iframeUrl" sandbox></iframe>
   		<u3c :config="this.u3c"></u3c>
@@ -52,11 +53,11 @@ export default {
 			buttonTimer: 0,
 			saveTopics: [{id: 0, text: 'dreams lived and interrupted'}, {id: 1, text: 'aestheticcccccccccccccc'}, {id: 2, text: 'different'}, {id: 3, text: 'obscure topic'}, {id: 4, text: 'tiny world'}, {id: 5, text: 'time capsule'}, {id: 6, text: 'fading out of existence'}, {id: 7, text: 'something else'}],
 			selectedTopicId: '',
-	        u3c: {
-	          about: "I want to build a memorial to all the wonderful things that happened on geocities and the amazing way it flash froze. Geocities was taken offline in 2009 the decayed version you see when navigating is literally what was left.",
-	          instructions: 'Spend a little bit of time on each page - even the ones that seem broken or are just a list of files. Save it if you want.',
-	          next: "Just needed to get this out of my system so did this over a weekend. If people find it interesting enough will add to it.",
-	        }
+      u3c: {
+        about: "I want to build a memorial to all the wonderful things that happened on geocities and the amazing way it flash froze. Geocities was taken offline in 2009 the decayed version you see when navigating is literally what was left.",
+        instructions: 'Spend a little bit of time on each page - even the ones that seem broken or are just a list of files. Save it if you want.',
+        next: "Just needed to get this out of my system so did this over a weekend. If people find it interesting enough will add to it.",
+      }
 		}
 	},
     firebase: {
@@ -184,6 +185,10 @@ iframe {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
+}
+
+pre {
+  margin-top: 80px;
 }
 
 a {

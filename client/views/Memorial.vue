@@ -12,6 +12,7 @@
         </li>
       </ul>
     </div>
+    <u3c :config="this.u3c"></u3c>
   </main>
 </template>
 
@@ -24,7 +25,12 @@ export default {
   name: 'memorial',
   data () {
     return {
-      memorialTopics: [{id: 0, text: 'dreams lived and interrupted'}, {id: 1, text: 'aestheticcccccccccccccc'}, {id: 2, text: 'different'}, {id: 3, text: 'obscure topic'}, {id: 4, text: 'tiny world'}, {id: 5, text: 'time capsule'}, {id: 6, text: 'fading out of existence'}, {id: 7, text: 'something else'}]
+      memorialTopics: [{id: 0, text: 'dreams lived and interrupted'}, {id: 1, text: 'aestheticcccccccccccccc'}, {id: 2, text: 'different'}, {id: 3, text: 'obscure topic'}, {id: 4, text: 'tiny world'}, {id: 5, text: 'time capsule'}, {id: 6, text: 'fading out of existence'}, {id: 7, text: 'something else'}],
+      u3c: {
+        about: "Some of the things we\'ve found on the geocities archive",
+        instructions: 'Links takes you to page hosted on the oocities archive',
+      }
+
     }
   },
   firebase: {

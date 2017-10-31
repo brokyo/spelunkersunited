@@ -1,7 +1,19 @@
 <template lang="html">
   <main>
     <div class="explainer" v-if="explainer">The Under Construction Club is a bunch of half-finished ideas released too early. Click the button for more info on this page or head to the site itself by clicking the name.</div>
-    <div class="topBanner"><span><a href="https://www.theunderconstruction.club" @mouseenter="explainer = true" @mouseleave="explainer = false">The Under Construction Club</a><button @click="min = !min"><span v-if="min">+</span><span v-else>-</span></button></span></div>
+    <div class="topBanner">
+      <div class="bannerOverlay">
+        <span>
+          <a href="https://www.theunderconstruction.club" @mouseenter="explainer = true" @mouseleave="explainer = false">
+            The Under Construction Club
+          </a>
+          <button @click="min = !min">
+            <span v-if="min">+</span>
+            <span v-else>-</span>
+          </button>
+        </span>
+      </div>
+    </div>
     <div class="textBox" v-if="!min">
       <div v-if="state === 'text'">
         <button @click="state = 'guestbook'">Guestbook</button>
@@ -105,11 +117,16 @@ export default {
     margin-left: 10px;
   }
 
+  .bannerOverlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.35)
+  }
+
   a {
-    font-weight: 900;
+    font-weight: 500;
     color: white;
     font-size: 22px;
-    -webkit-text-stroke: 1px #000;
   }
 }
 </style>
