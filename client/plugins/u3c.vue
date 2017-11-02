@@ -4,7 +4,7 @@
     <div class="topBanner">
       <div class="bannerOverlay">
         <span>
-          <a href="https://www.theunderconstruction.club" @mouseenter="explainer = true" @mouseleave="explainer = false">
+          <a href="http://www.under-construction.club" @mouseenter="explainer = true" @mouseleave="explainer = false">
             The Under Construction Club
           </a>
           <button @click="min = !min">
