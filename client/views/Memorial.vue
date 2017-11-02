@@ -8,7 +8,7 @@
         <li v-for="item in memorialized" v-if="item.topicId === index">
           <a :href="'http://www.oocities.org/'+item.neighborhood+'/'+item.address">{{item.neighborhood}}/{{item.address}}</a>
           <span v-if="item.note">Note: {{item.note}}</span>
-          <span v-if="item.from">Found by: {{item.form}}</span>
+          <span v-if="item.from">Found by: {{item.from}}</span>
         </li>
       </ul>
     </div>
