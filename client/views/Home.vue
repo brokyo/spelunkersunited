@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div id="introCard" v-if="!started">
-			<p>Controls in the upper right - other information in widget and @ underconstruction club.</p>
+			<p>Controls in the upper right - other information in widget and @ under-construction.club.</p>
       <p>Back and forward buttons work as if you're on the site</p>
       <router-link to="memorial">Visit The Memorial</router-link>
       <pre>All pages hosted on <a href="http://www.oocities.org">oocities</a></pre>
@@ -39,6 +39,9 @@ import '../plugins/u3c.js'
 
 export default {
 	name: 'home',
+    metaInfo: {
+        title: 'Let\'s Explore'
+    },
 	data () {
 		return {
 			activePage: {
@@ -137,8 +140,7 @@ export default {
     	iframeUrl () { return 'http://www.oocities.org/'+this.activePage.neighborhood+'/'+this.activePage.address}
     },
     mounted () {
-    	// this.spelunker = prompt('Welcome to Spelunkers United. Who do you want to be?')
-    	// window.alert('welcome ' + this.spelunker + ' control buttons are on the right and more information in the under construction club widget. Hope you find something great.')
+    	this.spelunker = prompt('Welcome to Geocities Spelunkers. Who do you want to be?')
     }
 
 }

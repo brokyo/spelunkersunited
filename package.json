@@ -1,5 +1,5 @@
 {
-  "name": "spelunkers-united",
+  "name": "geocities-spelunkers",
   "version": "0.1.0",
   "description": "My Superb Vue Project",
   "main": "client/index.js",
@@ -46,6 +46,7 @@
     "promise-polyfill": "^6.0.2",
     "vue": "^2.5.2",
     "vue-easy-toast": "^1.0.3",
+    "vue-meta": "^1.2.0",
     "vue-router": "^2.0.0",
     "vuefire": "^1.4.4",
     "vuex": "^2.0.0",

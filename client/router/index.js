@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+Vue.use(Router)
+
+import Meta from 'vue-meta'
+Vue.use(Meta)
+
 import Home from '../views/Home'
 import Memorial from '../views/Memorial'
-
-Vue.use(Router)
+import ToDo from '../views/todo'
 
 export default new Router({
   mode: 'history',
@@ -13,8 +17,12 @@ export default new Router({
       component: Home
     },
     {
-      path: '/Memorial',
+      path: '/memorial',
       component: Memorial
+    },
+    {
+      path: '/todo',
+      component: ToDo
     }
   ]
 })

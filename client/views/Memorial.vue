@@ -23,6 +23,9 @@ import '../plugins/u3c.js'
 export default {
 
   name: 'memorial',
+  metaInfo: {
+  	title: 'Memorial'
+  },
   data () {
     return {
       memorialTopics: [{id: 0, text: 'dreams lived and interrupted'}, {id: 1, text: 'aestheticcccccccccccccc'}, {id: 2, text: 'different'}, {id: 3, text: 'obscure topic'}, {id: 4, text: 'tiny world'}, {id: 5, text: 'time capsule'}, {id: 6, text: 'fading out of existence'}, {id: 7, text: 'something else'}],

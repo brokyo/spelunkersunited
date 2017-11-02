@@ -5,12 +5,12 @@ import Firebase from 'firebase'
 Vue.use(VueFire)
 
 var config = {
-	apiKey: "AIzaSyDP67uVdKSO6IyZmsN6_mQJrwLd_umPqmk",
-	authDomain: "spelunkersu.firebaseapp.com",
-	databaseURL: "https://spelunkersu.firebaseio.com",
-	projectId: "spelunkersu",
-	storageBucket: "",
-	messagingSenderId: "827731820059"
+    apiKey: "AIzaSyASLHUUo0xCpeSuxVnAYDaM6c-OIAQas-E",
+    authDomain: "geocitiesspelunkers.firebaseapp.com",
+    databaseURL: "https://geocitiesspelunkers.firebaseio.com",
+    projectId: "geocitiesspelunkers",
+    storageBucket: "geocitiesspelunkers.appspot.com",
+    messagingSenderId: "177405299831"
 };
 
 let firebase = Firebase.initializeApp(config)
